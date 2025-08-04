@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Lexend+Deca:wght@100..900&display=swap");
+
+:root {
+	--clr-primary-gold-400: hsl(31, 77%, 52%);
+	--clr-accent-cyan-500: hsl(184, 100%, 22%);
+	--clr-secondary-cyan-700: hsl(179, 100%, 13%);
+
+	--clr-neutral-paragraphs-50: hsla(0, 0%, 100%, 0.516);
+	--clr-neutral-200: hsl(0, 0%, 95%);
+
+	--fs-base: 0.9375rem;
+
+	--ff-base: "Lexend Deca", sans-serif;
+	--ff-secondary: "Big Shoulders", sans-serif;
+
+	--fw-base: 400;
+	--fw-strong: 700;
+}
+
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			interpolate-size: allow-keywords;
+		}
+	}
+
+	body {
+		/* 4. Add accessible line-height */
+		line-height: 1.6;
+		/* 5. Improve text rendering */
+		-webkit-font-smoothing: antialiased;
+	}
+
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		overflow-wrap: break-word;
+	}
+}
+
+body {
+	font-size: var(--fs-base);
+	font-family: var(--ff-base);
+	font-weight: var(--fw-base);
+	background-color: var(--clr-neutral-200);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding-inline: clamp(1.5rem, 2vw + 1rem, 2rem);
+}
+
+.preview-section {
+	display: grid;
+	margin-block: 2rem;
+}
+
+.preview-section .card-component {
+	background-color: var(--clr-primary-gold-400);
+	color: var(--clr-neutral-paragraphs-50);
+	padding-inline: clamp(2.5rem, 6vw + 1rem, 3rem);
+	padding-block: clamp(2.5rem, 6vw + 1rem, 3.5rem);
+	display: grid;
+	gap: clamp(1.5rem, 4vw + 1rem, 2rem);
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+}
+
+.preview-section .card-component h2 {
+	font-size: clamp(2.2rem, 2vw + 1rem, 2.5rem);
+	font-family: var(--ff-secondary);
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 1.5px;
+	color: hsla(0, 0%, 95%, 0.9);
+	line-height: normal;
+}
+
+.preview-section .card-component p {
+	color: var(--clr-neutral-paragraphs-50);
+}
+
+.preview-section .card-component button {
+	text-decoration: none;
+	background-color: var(--clr-neutral-200);
+	width: 55%;
+	border-radius: 2rem;
+	padding: 1rem 0.5rem;
+	text-align: center;
+	color: hsla(31, 77%, 52%, 0.6);
+	font-weight: var(--fw-strong);
+	max-width: 200px;
+	font-size: clamp(0.7rem, 4vw, 1rem);
+	transition: color 0.2s ease, background-color 0.2s ease, border 0.2s ease-in;
+	line-height: 1;
+	border: none;
+}
+
+.preview-section .card-component:nth-child(2) {
+	background-color: var(--clr-accent-cyan-500);
+	color: var(--color);
+	display: grid;
+	gap: 2rem;
+	border-radius: 0;
+}
+.preview-section .card-component:nth-child(2) button {
+	color: hsla(184, 100%, 22%, 0.7);
+	line-height: 1;
+}
+
+.preview-section .card-component:nth-child(3) button {
+	color: hsla(179, 100%, 13%, 0.7);
+	line-height: 1;
+}
+
+.preview-section .card-component:nth-child(3) {
+	background-color: var(--clr-secondary-cyan-700);
+	color: var(--color);
+	display: grid;
+	gap: 2rem;
+	border-radius: 0;
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+.preview-section .card-component button:hover,
+.preview-section .card-component button:focus-visible {
+	background-color: transparent;
+	color: var(--clr-neutral-200);
+	border: 1px solid var(--clr-neutral-200);
+}
+
+@media (width > 700px) {
+	.preview-section {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		max-width: 900px;
+	}
+
+	.preview-section .card-component p {
+		margin-bottom: clamp(3rem, 3vw + 0.5rem, 4rem);
+	}
+	.preview-section .card-component:nth-child(1) {
+		border-radius: 0;
+		border-start-start-radius: 0.5rem;
+		border-end-start-radius: 0.5rem;
+	}
+
+	.preview-section .card-component:nth-child(3) {
+		border-radius: 0;
+		border-end-end-radius: 0.5rem;
+		border-start-end-radius: 0.5rem;
+	}
+
+	.preview-section .card-component button {
+		width: 75%;
+		font-size: clamp(0.2rem, 1.3vw, 1rem);
+	}
+}
