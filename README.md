@@ -45,5 +45,13 @@ Want some support on the challenge? [Join our community](https://www.frontendmen
 
 ### Links
 
--   Solution URL: [SolutionURL](https://your-solution-url.com)
--   Live Site URL: [SiteURL](https://your-live-site-url.com)
+-   Solution URL: [SolutionURL](https://www.frontendmentor.io/solutions/3-column-product-component-LPKCbZhNdG)
+-   Live Site URL: [SiteURL](https://frontend-mentor-3column-product.netlify.app/)
+
+### Built with
+
+-   Semantic HTML5 markup
+-   CSS custom properties
+-   Flexbox
+-   CSS Grid
+-   Mobile-first workflow
